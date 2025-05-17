@@ -2,9 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <!-- <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <OutputType>Exe</OutputType> -->
+    <BlazorWebAssemblyEnableCompression>false</BlazorWebAssemblyEnableCompression>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,12 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\\PS5NorModifier.Shared\\PS5NorModifier.Shared.csproj" />
-    <ProjectReference Include="..\\PS5NorModifier.Core\\PS5NorModifier.Core.csproj" />
+    <ProjectReference Include="..\PS5NorModifier.Shared\PS5NorModifier.Shared.csproj" />
+    <ProjectReference Include="..\PS5NorModifier.Core\PS5NorModifier.Core.csproj" />
   </ItemGroup>
-
-  <!-- <ItemGroup>
-    <Content Include="..\PS5NorModifier.Shared\wwwroot\**\*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
-  </ItemGroup> -->
 
 </Project>

@@ -3,11 +3,7 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net9.0</TargetFramework>
-    <!-- <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-		<PublishSingleFile>true</PublishSingleFile>
-		<SelfContained>false</SelfContained> -->
-		<!-- <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract> -->
+    <BlazorWebAssemblyEnableCompression>false</BlazorWebAssemblyEnableCompression>
   </PropertyGroup>
 
 	<ItemGroup>
@@ -24,8 +20,28 @@
     <ProjectReference Include="..\PS5NorModifier.Core\PS5NorModifier.Core.csproj" />
   </ItemGroup>
 
-  <!-- <ItemGroup>
-    <Content Include="..\PS5NorModifier.Shared\wwwroot\**\*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
-  </ItemGroup> -->
+
+  <!-- Needed for wwwroot to be present in Photino build -->
+  <Target Name="CopySharedWwwRoot" AfterTargets="Build">
+    <!-- Copy from Shared/wwwroot -->
+    <ItemGroup>
+      <SharedWwwRootFiles Include="..\PS5NorModifier.Shared\wwwroot\**\*" />
+    </ItemGroup>
+
+    <Copy
+      SourceFiles="@(SharedWwwRootFiles)"
+      DestinationFolder="$(OutDir)wwwroot\%(RecursiveDir)"
+      SkipUnchangedFiles="true" />
+    
+    <!-- Then override with Photino-specific wwwroot files -->
+    <ItemGroup>
+      <PhotinoWwwRootFiles Include="wwwroot\**\*" />
+    </ItemGroup>
+
+    <Copy
+      SourceFiles="@(PhotinoWwwRootFiles)"
+      DestinationFolder="$(OutDir)wwwroot\%(RecursiveDir)"
+      SkipUnchangedFiles="true" />
+  </Target>
 
 </Project>

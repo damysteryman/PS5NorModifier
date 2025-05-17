@@ -4,6 +4,7 @@ using PS5NorModifier.Shared;
 using PS5NorModifier.Core;
 using MudBlazor.Services;
 using Microsoft.AspNetCore.Components.Web;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("app");

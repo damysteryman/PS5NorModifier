@@ -2,15 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <!-- <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings> -->
-    <!-- <RazorLangVersion>latest</RazorLangVersion> -->
-    <RazorClassLibrary>true</RazorClassLibrary>
-    <!-- <AddRazorSupportForMvc>true</AddRazorSupportForMvc> -->
-    <EnableDefaultContentItems>true</EnableDefaultContentItems>
-    <StaticWebAssetBasePath></StaticWebAssetBasePath>
-  </PropertyGroup>
 
+    <RazorClassLibrary>true</RazorClassLibrary>
+
+    <BlazorWebAssemblyEnableCompression>false</BlazorWebAssemblyEnableCompression>
+  </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.*" />

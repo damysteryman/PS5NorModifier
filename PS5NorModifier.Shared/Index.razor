@@ -1,0 +1,13 @@
+@using PS5NorModifier.Core
+
+<h3>Hello World Shared Component</h3>
+<p>@GreetMessage</p>
+
+@code {
+    private string GreetMessage = "";
+
+    protected override void OnInitialized()
+    {
+        GreetMessage = Test.Greet("PS5NorModifier.Shared");
+    }
+}

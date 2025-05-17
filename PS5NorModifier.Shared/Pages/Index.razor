@@ -1,0 +1,15 @@
+@using PS5NorModifier.Core
+
+@page "/"
+
+<h3>Hello World Shared Component Test</h3>
+<p>@Message</p>
+
+@code {
+    private string Message = "";
+
+    protected override void OnInitialized()
+    {
+        Message = Test.Greet("Blazor");
+    }
+}

@@ -1,0 +1,11 @@
+@page "/test"
+<MudTabs @bind-ActivePanelIndex="_tabIndex">
+    <MudTabPanel Text="TEST">
+        <MudButton Variant="Variant.Filled" Color="Color.Primary">Primary</MudButton>
+    </MudTabPanel>
+    <MudButton Variant="Variant.Filled" Color="Color.Primary">Primary</MudButton>
+</MudTabs>
+
+@code {
+    private int _tabIndex = 0;
+}

@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <!-- <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+		<PublishSingleFile>true</PublishSingleFile>
+		<SelfContained>false</SelfContained> -->
+		<!-- <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract> -->
+  </PropertyGroup>
+
+	<ItemGroup>
+		<SupportedPlatform Include="browser" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Photino.Blazor" Version="4.0.13" />
+    <PackageReference Include="Photino.Native" Version="4.0.22" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PS5NorModifier.Shared\PS5NorModifier.Shared.csproj" />
+    <ProjectReference Include="..\PS5NorModifier.Core\PS5NorModifier.Core.csproj" />
+  </ItemGroup>
+
+  <!-- <ItemGroup>
+    <Content Include="..\PS5NorModifier.Shared\wwwroot\**\*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup> -->
+
+</Project>

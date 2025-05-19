@@ -1,0 +1,97 @@
+@page "/nordump"
+
+<MudGrid>
+    <MudItem xs="12">
+        <MudTextField @bind-Value="norPath" Label="Select NOR Dump" Variant="Variant.Filled"></MudTextField>
+    </MudItem>
+    <MudItem xs="12" sm="6">
+        <MudSimpleTable>
+            <thead>
+                <tr>
+                    <th>Dump Results</th>
+                    <th>Current Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Serial Number</td>
+                    <td>@(string.IsNullOrEmpty(ConsoleSerial) ? "..." : ConsoleSerial)</td>
+                </tr>
+                <tr>
+                    <td>Motherboard Serial</td>
+                    <td>@(string.IsNullOrEmpty(MbSerial) ? "..." : MbSerial)</td>
+                </tr>
+                <tr>
+                    <td>Board Variant</td>
+                    <td>@(string.IsNullOrEmpty(BoardVariant) ? "..." : BoardVariant)</td>
+                </tr>
+                <tr>
+                    <td>PS5 Model</td>
+                    <td>@(string.IsNullOrEmpty(BoardVariant) ? "..." : BoardVariant)</td>
+                </tr>
+                <tr>
+                    <td>File Size</td>
+                    <td>@(FileSize <= 0 ? "..." : FileSize.ToString())</td>
+                </tr>
+                <tr>
+                    <td>WiFi MAC Address</td>
+                    <td>@(string.IsNullOrEmpty(WifiMac) ? "..." : WifiMac)</td>
+                </tr>
+                <tr>
+                    <td>LAN MAC Address</td>
+                    <td>@(string.IsNullOrEmpty(LanMac) ? "..." : LanMac)</td>
+                </tr>
+            </tbody>
+        </MudSimpleTable>
+    </MudItem>
+    <MudItem xs="12" sm="6">
+        <MudSimpleTable>
+            <thead>
+                <tr>
+                    <th>Modify Values</th>
+                    <th>New Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Serial Number</td>
+                    @* <td><MudTextField @bind-Value="NewConsoleSerial" Variant="Variant.Filled" Margin="Margin.Dense"></MudTextField></td> *@
+                    <td><MudInput Placeholder="@ConsoleSerial" @bind-Value="NewConsoleSerial" /></td>
+                </tr>
+                <tr>
+                    <td>Board Variant</td>
+                    <td>@(string.IsNullOrEmpty(BoardVariant) ? "..." : BoardVariant)</td>
+                </tr>
+                <tr>
+                    <td>PS5 Model</td>
+                    <td>@(string.IsNullOrEmpty(BoardVariant) ? "..." : BoardVariant)</td>
+                </tr>
+                <tr>
+                    <td>WiFi MAC Address</td>
+                    <td>@(string.IsNullOrEmpty(WifiMac) ? "..." : WifiMac)</td>
+                </tr>
+                <tr>
+                    <td>LAN MAC Address</td>
+                    <td>@(string.IsNullOrEmpty(LanMac) ? "..." : LanMac)</td>
+                </tr>
+            </tbody>
+        </MudSimpleTable>
+    </MudItem>
+</MudGrid>
+
+
+
+@code
+{
+    string norPath = "";
+
+    string ConsoleSerial = "";
+    string MbSerial = "";
+    string BoardVariant = "";
+    string ConsoleModel = "";
+    int FileSize;
+    string WifiMac = "";
+    string LanMac = "";
+
+    string NewConsoleSerial = "";
+}
